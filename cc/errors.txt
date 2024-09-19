@@ -1,0 +1,7 @@
+# These are the starting ranges for errors in the different modules
+matcher:0x0100
+publisher_list_generator:0x0200
+publisher_metadata_writer:0x0300
+worker_runner:0x0400
+common_blob_streamer:0x0500
+common_csv_parser:0x0600

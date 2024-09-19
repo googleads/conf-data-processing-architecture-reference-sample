@@ -1,0 +1,13 @@
+build --config=clang
+build --config=java
+build --config=gcpcpio
+
+build:cpp --client_env=BAZEL_CXXOPTS=-std=c++17
+
+build:clang --config=cpp
+
+build:gcpcpio --@com_google_adm_cloud_scp//cc/public/cpio/interface:platform=gcp
+
+# Force bazel to use specific JDK, otherwise JDK may not be predictable
+build:java --java_language_version=11
+build:java --java_runtime_version=remotejdk_11
