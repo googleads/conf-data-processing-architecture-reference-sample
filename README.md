@@ -1,14 +1,19 @@
-TEE Based SCP Job Processor Repo
+Google Ads Confidential Computing - Code Samples
 
 # Projects
 
-Currently, the only project in this repo is the PAIR project which is a worker that matches a publisher's PII which has a corresponding SID (Surrogate ID) mapped to it with an advertiser's PII. Only the PIIs that match across both sets have their SIDs exported.
+This repository contains sample code demonstrating how to use a [Trusted Execution Environment (TEE) application](https://github.com/google-ads-confidential-computing/conf-data-processing-architecture-reference/blob/main/docs/TrustedExecutionEnvironmentsArchitecturalReference.md) to securely join publisher and advertiser data without either party discerning sensitive information from the other by following these steps:
+
+- Publishers provide a list of their known PII (e.g., email addresses) to use for matching in a cloud storage location only accessible to them and the TEE application
+- Advertisers provide a list of their corresponding PII in a separate cloud storage location only accessible to them and the TEE application
+- Publishers provide a list of publisher identifiers (pub IDs) which map to their PII
+- Advertisers request matches, the TEE application compares the two lists, and outputs a list of the matching surrogate identifiers in a cloud storage location accessible to them.
+- Advertisers can then use these pub IDs downstream for example in audience targeting lists without directly knowing anything about the actual target
 
 # Running
 
-The worker binary can be found in cc/worker_runner/worker_runner.cc. This binary can be built using the build_worker.sh found in pairworker.
-Once the worker binary is built, a TEE processor can be brought up with the terraform config found in terragorm/gcp/environments/dev/. A convenience script can be found in terraform/gcp/deploy/build_and_deploy.sh which performs additional steps to get the configurations setup correctly.
+For instructions on building and running the TEE application, see [PAIRDEMO.md](PAIRDEMO.md).
 
 # Contribution
 
-Please see CONTRIBUTING.md for details.
+Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
