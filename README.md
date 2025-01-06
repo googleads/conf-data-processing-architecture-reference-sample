@@ -10,6 +10,8 @@ This repository contains sample code demonstrating how to use a [Trusted Executi
 - Advertisers request matches, the TEE application compares the two lists, and outputs a list of the matching surrogate identifiers in a cloud storage location accessible to them.
 - Advertisers can then use these pub IDs downstream for example in audience targeting lists without directly knowing anything about the actual target
 
+See [Trusted Execution Environments: Example Use Case and Code Samples](https://github.com/google-ads-confidential-computing/conf-data-processing-architecture-reference/blob/main/docs/TrustedExecutionEnvironmentsCodeSamples.md) for more details on the use case.
+
 # Running
 
 For instructions on building and running the TEE application, see [PAIRDEMO.md](PAIRDEMO.md).
